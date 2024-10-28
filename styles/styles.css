@@ -1,76 +1,77 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #000;
-    color: #fff;
-    transition: background-color 0.5s;
-}
-
-header {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+    background-color: #f4f4f4; /* Background color of the page */
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Keep logo on the left and language icon on the right */
     align-items: center;
-    padding: 15px 30px;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
     border-radius: 10px;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: bold; /* Make it bold */
+    background: linear-gradient(90deg, #FFD700, hsl(325, 73%, 43%), #6129bb); /* Golden gradient */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text color transparent */
+    display: inline-block; /* Ensures the gradient only applies to the text */
+    margin-right: auto; /* Aligns with navbar structure */
 }
 
 .nav-buttons {
+    display: flex; /* Use flexbox for horizontal alignment */
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    margin-right: 20px; /* Adjusted space between buttons and language icon */
 }
 
 .nav-buttons li {
-    margin-left: 20px;
+    margin-right: 20px; /* Space between individual buttons */
+}
+
+.nav-buttons li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Set text color to white or your preferred color */
 }
 
 .language-selector {
     position: relative;
+    display: inline-block;
+    margin-left: auto; /* Pushes the language selector to the right */
+}
+
+.language-selector img {
+    cursor: pointer;
+    width: 16px; /* Reduced size */
+    height: 16px; /* Reduced size */
 }
 
 .dropdown {
     display: none;
     position: absolute;
-    top: 40px;
+    top: 20px; /* Adjusted position to align with the navbar */
     right: 0;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Ensure dropdown is above other elements */
 }
 
 .dropdown button {
     width: 100%;
-    padding: 10px;
+    padding: 5px; /* Reduced padding */
     border: none;
     background: none;
     cursor: pointer;
-    text-align: left;
 }
 
 .dropdown button:hover {
     background-color: #eee;
 }
-
-main {
-    padding: 100px 20px;
-}
-
-section {
-    margin-bottom: 50px;
-}
-
-h1, h2 {
-    text-align: center;
-}
-

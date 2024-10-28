@@ -1,30 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const languageIcon = document.getElementById("languageIcon");
     const dropdown = document.getElementById("dropdown");
-    const body = document.body;
+    const navbar = document.getElementById("navbar");
 
     // Color options to cycle through
-    const colors = [
-        "#FF5733", // Color 1
-        "#33FF57", // Color 2
-        "#3357FF", // Color 3
-        "#FF33A8", // Color 4
-        "#FFD633", // Color 5
-        "#33FFD6", // Color 6
-        "#FF33F6", // Color 7
-        "#A833FF", // Color 8
-        "#33FF9C", // Color 9
-        "#FFBD33"  // Color 10
-    ];
+    const colors = ["#333", "#007bff", "#28a745", "#17a2b8", "#ffc107", "#dc3545", "#6f42c1", "#fd7e14", "#20c997", "#e83e8c"];
     let colorIndex = 0;
 
-    // Change background color on document click
-    document.addEventListener("click", function (e) {
-        body.style.backgroundColor = colors[colorIndex];
-        colorIndex = (colorIndex + 1) % colors.length;
-    });
-
-    // Toggle dropdown visibility when the language icon is clicked
+    // Toggle dropdown visibility when the icon is clicked
     languageIcon.addEventListener("click", function (e) {
         dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
         e.stopPropagation(); // Prevent event from bubbling up to the document
@@ -37,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Add click listeners to each language button for demonstration purposes
+    // Add click listeners to each language button
     document.querySelectorAll(".dropdown button").forEach(button => {
         button.addEventListener("click", function () {
             const selectedLang = button.getAttribute("data-lang");
@@ -54,30 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Initialize 3D environment (placeholder for future implementation)
-    function init3D() {
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-
-        const geometry = new THREE.BoxGeometry();
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-
-        camera.position.z = 5;
-
-        function animate() {
-            requestAnimationFrame(animate);
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            renderer.render(scene, camera);
-        }
-
-        animate();
-    }
-
-    init3D();
+    // Change background color on click
+    document.body.addEventListener("click", function () {
+        document.body.style.backgroundColor = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+    });
 });
+
