@@ -2,25 +2,135 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Portfolio Navigation</title>
+    <title>Baluku Jerry</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <style>
+     .neon-button {
+    background-color: transparent;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+.neon-button:hover {
+    color: #000;
+    box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;  
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between icons */
+            padding: 20px;
+        }
+
+        .social-icon {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            perspective: 1000px; /* Perspective for 3D effect */
+        }
+
+        .social-icon-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .social-icon:hover .social-icon-inner {
+            transform: rotateY(180deg);
+        }
+
+        .social-icon .front,
+        .social-icon .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px; /* Rounded corners */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backface-visibility: hidden; /* Hide back face */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        }
+
+        /* Front side styles (icons) */
+        .social-icon .front {
+            background: linear-gradient(135deg, #ff0080, #ff8c00);
+            color: #fff; /* Icon color */
+        }
+
+        /* Back side styles (logos) */
+        .social-icon .back {
+            background-size: contain; /* Fit the logo */
+            background-repeat: no-repeat; /* Prevent repeating */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); /* Stronger shadow for logo */
+            transform: rotateY(180deg); /* Rotate to back side */
+        }
+
+        /* Specific logo backgrounds */
+        .instagram .back {
+            background-image: url('Images/instagram-logo.png'); /* Path to Instagram logo */
+        }
+        .tiktok .back {
+            background-image: url('Images/tiktok-logo.png'); /* Path to TikTok logo */
+        }
+        .whatsapp .back {
+            background-image: url('Images/whatsapp-logo.png'); /* Path to WhatsApp logo */
+        }
+        .youtube .back {
+            background-image: url('Images/youtube-logo.png'); /* Path to YouTube logo */
+        }
+
+        .social-icon i {
+            font-size: 2em; /* Larger icon size */
+            transition: transform 0.3s; /* Smooth icon scaling */
+        }
+
+        .social-icon:hover .front i {
+            transform: scale(1.2); /* Scale icon on hover */
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar" id="navbar">
             <div class="logo" id="logo" data-translate='{"en": "Baluku Jerry", "es": "Baluku Jerry", "fr": "Baluku Jerry", "zh-CN": "巴鲁库·杰里"}'>Baluku Jerry</div>
 
-            <ul class="nav-buttons">
-                <li><a href="#home" data-translate='{"en": "Home", "es": "Inicio", "fr": "Accueil", "zh-CN": "主页", "ar": "الصفحة الرئيسية", "hi": "घर", "pt": "Início", "ru": "Главная", "ja": "ホーム", "de": "Startseite"}'>Home</a></li>
-                <li><a href="#about" data-translate='{"en": "About", "es": "Acerca de", "fr": "À propos", "zh-CN": "关于", "ar": "حول", "hi": "के बारे में", "pt": "Sobre", "ru": "О нас", "ja": "約", "de": "Über"}'>About</a></li>
-                <li><a href="#services" data-translate='{"en": "Services", "es": "Servicios", "fr": "Services", "zh-CN": "服务", "ar": "خدمات", "hi": "सेवाएँ", "pt": "Serviços", "ru": "Услуги", "ja": "サービス", "de": "Dienstleistungen"}'>Services</a></li>
-                <li><a href="#skills" data-translate='{"en": "Skills", "es": "Habilidades", "fr": "Compétences", "zh-CN": "技能", "ar": "مهارات", "hi": "कौशल", "pt": "Habilidades", "ru": "Навыки", "ja": "スキル", "de": "Fähigkeiten"}'>Skills</a></li>
-                <li><a href="#contact" data-translate='{"en": "Contact", "es": "Contacto", "fr": "Contact", "zh-CN": "联系", "ar": "اتصل", "hi": "संपर्क करें", "pt": "Contato", "ru": "Контакт", "ja": "連絡先", "de": "Kontakt"}'>Contact</a></li>
+            <ul class="nav-buttons" style="font-family: brush script mt,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="language-selector">
                 <img src="Images/Licon.png" alt="Language Icon" width="16" height="16" id="languageIcon" />
                 <div class="dropdown" id="dropdown">
+                    <div><button class="dark-mode-toggle" id="darkModeToggle">🌙</button></div>
                     <ul class="nav-buttons">
                         <li><button data-lang="en">English</button></li>
                         <li><button data-lang="es">Spanish</button></li>
@@ -38,13 +148,58 @@
         </nav>
     </header>
     <main>
-        <section id="home">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Explore my work and projects!</p>
+        <section id="home" class="home-section">
+            <div class="content-container">
+                <h1 class="section-heading">Heil Dear!</h1>
+                <p>I'm <span id="josephats" class="neon" style="font-family: 'Times New Roman', Times, serif; font-size:20px;">Josephats</span></p>
+                <p>And a <span class="auto-typed-text"></span><span class="cursor"></span></p>
+                <p style="font-family: 'Times New Roman', Times, serif;">I am a tech enthusiast with a passion for developing cutting-edge solutions that enhance user experiences. My expertise spans software development, system architecture, and UI/UX design. I thrive on transforming complex challenges into scalable applications, leveraging the latest tech for innovation. Dedicated to continuous learning, I deliver impactful projects for today’s digital landscape.</p>
+                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">As a collaborative team player, I enjoy brainstorming with diverse groups to implement agile strategies for high-quality results. My goal: to impact the tech world, helping businesses harness the power of technology effectively.</p>
+                <div>
+                    
+                </div>
+            </div>
+           
+        
+            <div class="image-container">
+                <img src="Images/Jerry.png" alt="A professional portrait of Baluku Jerry" class="framed-image" />
+            </div>
         </section>
-        <!-- Additional sections for About, Services, Skills, and Contact -->
+        <section style="padding: 20px;">
+            <div>
+            <a href="path/to/your/cv.pdf" class="neon-button" download>Download CV</a>
+            <a href="#contact" class="neon-button">Hire Me</a>
+        </div>
+        <div class="social-icons">
+                <div class="social-icon instagram">
+                    <div class="social-icon-inner">
+                        <div class="front"><i class="fab fa-instagram"></i></div>
+                        <div class="back">Instagram</div>
+                    </div>
+                </div>
+                <div class="social-icon tiktok">
+                    <div class="social-icon-inner">
+                        <div class="front"><i class="fab fa-tiktok"></i></div>
+                        <div class="back">TikTok</div>
+                    </div>
+                </div>
+                <div class="social-icon whatsapp">
+                    <div class="social-icon-inner">
+                        <div class="front"><i class="fab fa-whatsapp"></i></div>
+                        <div class="back">WhatsApp</div>
+                    </div>
+                </div>
+                <div class="social-icon youtube">
+                    <div class="social-icon-inner">
+                        <div class="front"><i class="fab fa-youtube"></i></div>
+                        <div class="back">YouTube</div>
+                    </div>
+                </div>
+            </div>
+            
+    </section>
     </main>
+    
     <script src="javascript/script.js"></script>
 </body>
 </html>
-
