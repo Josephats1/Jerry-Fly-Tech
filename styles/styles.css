@@ -291,7 +291,7 @@ body.dark-mode .nav-button:hover {
 .neon-button {
     background-color: transparent;
     border: 2px solid #00ff00;
-    color: #00ff00;
+    color: #ff00dd;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -304,8 +304,8 @@ body.dark-mode .nav-button:hover {
 }
 
 .neon-button:hover {
-    color: #000;
-    box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+    color: hsl(251, 76%, 49%);
+    box-shadow: 0 0 5px #e6490c, 0 0 10px #c70ca8, 0 0 15px #00ff00;
 }
 
 .section-heading {
