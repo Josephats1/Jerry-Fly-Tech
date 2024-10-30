@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
     let textIndex = 0; // Index for texts
     let colorIndex = 0; // Index for colors
-    const typingSpeed = 50; // Speed of typing (in ms)
-    const deletingSpeed = 50; // Speed of deleting (in ms)
-    const pauseDuration = 2000; // Duration to pause after typing
+    const typingSpeed = 80; // Speed of typing (in ms)
+    const deletingSpeed = 80; // Speed of deleting (in ms)
+    const pauseDuration = 80; // Duration to pause after typing
     const autoTypedTextElement = document.createElement('span');
     const cursor = document.createElement('span');
     const nameElement = document.querySelector('#josephats');

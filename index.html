@@ -7,68 +7,10 @@
     <title>Baluku Jerry</title>
     <link rel="stylesheet" href="styles/styles.css">
     <style>
-       .neon-button {
-    background-color: transparent;
-    border: 2px solid #00ff00;
-    color: #00ff00;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    transition: 0.3s;
-    border-radius: 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: relative;
-    flex: 1; /* Allow buttons to grow equally */
-    max-width: 150px; /* Limit maximum width */
-    margin: 0 5px; /* Space between buttons */
-}
-
-.button-container {
-    display: flex;
-    flex-direction: row; /* Keep buttons in a row */
-    justify-content: center; /* Center buttons horizontally */
-    margin-top: 20px; /* Add some spacing */
-}
-
-@media (max-width: 768px) {
-    .neon-button {
-        font-size: 14px; /* Reduce font size on small screens */
-        padding: 8px 16px; /* Adjust padding to fit better */
-    }
-}
-
-        .button-container {
-    display: flex;
-    flex-direction: row; /* Keep buttons in a row */
-    justify-content: center; /* Center buttons horizontally */
-    margin-top: 20px; /* Add some spacing */
-}
-
-.neon-button {
-    flex: 1; /* Allow buttons to grow equally */
-    max-width: 150px; /* Optional: limit the maximum width */
-    margin: 0 5px; /* Add horizontal margin between buttons */
-}
-
-@media (max-width: 768px) {
-    .neon-button {
-        font-size: 14px; /* Reduce font size on small screens */
-        padding: 8px 16px; /* Adjust padding to fit better */
-    }
-}
-
-    
-    .neon-button {
-        margin: 0 5px; /* Add horizontal margin between buttons */
-    }
-}
-
         .neon-button {
-            background-color: transparent;
-            border: 2px solid #00ff00;
-            color: #00ff00;
+            background: linear-gradient(135deg, #c51c24, #b408d6); /* Gradient */
+            border: none;
+            color: #fff;
             padding: 10px 20px;
             text-align: center;
             text-decoration: none;
@@ -77,25 +19,24 @@
             transition: 0.3s;
             border-radius: 5px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            position: relative;
-            margin: 5px 0; /* Space between buttons */
+            margin: 5px; /* Space between buttons */
         }
 
         .neon-button:hover {
-            color: #000;
-            box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+            box-shadow: 0 0 5px #e75e0f, 0 0 10px #d11c1c, 0 0 15px #e015b4;
         }
 
-        /* Additional styles for responsiveness */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
         @media (max-width: 768px) {
             .neon-button {
-                width: 100%; /* Full width on small screens */
-                max-width: 300px; /* Optional: limit the maximum width */
+                font-size: 14px;
+                padding: 8px 16px;
             }
-        }
-        .neon-button:hover {
-            color: #000;
-            box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
         }
 
         .section-heading {
@@ -109,84 +50,71 @@
             padding: 20px;
             text-align: center;  
         }
+
         .social-icons {
-    display: flex; /* Use Flexbox */
-    justify-content: center; /* Center icons horizontally */
-    align-items: center; /* Center icons vertically */
-    gap: 20px; /* Space between icons */
-    padding: 20px;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
 
-.social-icon {
-    width: 60px; /* Icon size */
-    height: 60px; /* Icon size */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Include background color transition */
-    border-radius: 50%; /* Make icons circular */
-    background-color: #fff; /* White background for a clean look */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for a realistic effect */
-}
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-.social-icon i {
-    font-size: 2em; /* Icon size */
-    color: #555; /* Default icon color */
-    transition: color 0.3s; /* Smooth color transition */
-}
+        .social-icon i {
+            color: #d8d064;
+            transition: color 0.3s;
+        }
 
-/* Specific icon colors */
-.instagram {
-    background: linear-gradient(135deg, #E1306C, #FD1D1D); /* Instagram gradient */
-}
+        /* Specific icon colors */
+        .instagram { background: linear-gradient(135deg, #680526, hsl(313, 98%, 55%)); }
+        .tiktok { background: linear-gradient(135deg, #69C9EF, #2156c7); }
+        .whatsapp { background: linear-gradient(135deg, #b5e9c8, #128C7E); }
+        .youtube { background: linear-gradient(135deg, #FF0000, #C4302B); }
+        .linkedin { background: linear-gradient(135deg, #623dc9, #005582); }
+        .twitter { background: linear-gradient(135deg, #1DA1F2, #1452af); }
 
-.tiktok {
-    background: linear-gradient(135deg, #69C9EF, #010101); /* TikTok gradient */
-}
+        .social-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px hwb(0 0% 0%), 0 0 40px #d4139a;
+        }
 
-.whatsapp {
-    background: linear-gradient(135deg, #25D366, #128C7E); /* WhatsApp gradient */
-}
-
-.youtube {
-    background: linear-gradient(135deg, #FF0000, #C4302B); /* YouTube gradient */
-}
-
-.social-icon:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    box-shadow: 0 0 20px hwb(0 0% 0%), 0 0 40px #d4139a; /* Neon glow effect */
-}
-
-.social-icon:hover i {
-    color: #fff; /* Change icon color on hover */
-}
-/* Specific icon colors */
-.linkedin {
-    background: linear-gradient(135deg, #0077B5, #005582); /* LinkedIn gradient */
-}
-
-.twitter {
-    background: linear-gradient(135deg, #1DA1F2, #0D94E5); /* Twitter gradient */
-}
+        .social-icon:hover i {
+            color: #fff;
+        }
 
         @media (max-width: 768px) {
             .social-icon {
-                width: 40px; /* Reduced icon size */
-                height: 40px; /* Reduced icon size */
+                width: 30px;
+                height: 30px;
             }
 
             .social-icon i {
-                font-size: 1.5em; /* Reduced font size */
+                font-size: 1.5em;
             }
+        }
+
+        .auto-typed-text {
+            min-width: 80px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar" id="navbar">
-            <div class="logo" id="logo" data-translate='{"en": "Baluku Jerry", "es": "Baluku Jerry", "fr": "Baluku Jerry", "zh-CN": "巴鲁库·杰里"}'>Baluku Jerry</div>
-
-            <ul class="nav-buttons" style="font-family: brush script mt,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <div class="logo" id="logo">Baluku Jerry</div>
+            <ul class="nav-buttons" style="font-family: brush script mt, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -216,17 +144,18 @@
     <main>
         <section id="home" class="home-section">
             <div class="content-container">
+               
                 <h1 class="section-heading">Heil Dear!</h1>
                 <p>I'm <span id="josephats" class="neon" style="font-family: 'Times New Roman', Times, serif; font-size:20px;">Josephats</span></p>
                 <p>And a <span class="auto-typed-text"></span><span class="cursor"></span></p>
                 <p style="font-family: 'Times New Roman', Times, serif;">I am a tech enthusiast with a passion for developing cutting-edge solutions that enhance user experiences. My expertise spans software development, system architecture, and UI/UX design. I thrive on transforming complex challenges into scalable applications, leveraging the latest tech for innovation. Dedicated to continuous learning, I deliver impactful projects for today’s digital landscape.</p>
                 <p style="font-family: 'Times New Roman', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;">As a collaborative team player, I enjoy brainstorming with diverse groups to implement agile strategies for high-quality results. My goal: to impact the tech world, helping businesses harness the power of technology effectively.</p>
             </div>
-
             <div class="image-container">
                 <img src="Images/Jerry.png" alt="A professional portrait of Baluku Jerry" class="framed-image" />
             </div>
         </section>
+        
         <section style="padding: 20px; margin-top: 10px;">
             <div class="button-container">
                 <a href="path/to/your/cv.pdf" class="neon-button" id="downloadButton" download>
@@ -257,14 +186,11 @@
                 </div>
             </section>
         </section>
-        
-        </section>
     </main>
 
     <script>
         document.getElementById('downloadButton').addEventListener('click', function(e) {
             e.preventDefault(); // Prevent the default download behavior
-            
             const url = this.getAttribute('href'); // Get the CV URL
             let downloadProgress = 0; // Initialize download progress
             
@@ -277,35 +203,35 @@
                     clearInterval(interval);
                     this.innerHTML = `<i class="fas fa-check-circle"></i> Complete`; // Change to complete
                     setTimeout(() => {
-                        // Actually start the download after completion message
-                        window.location.href = url;
-                    }, 1000); // Delay for 1 second before initiating download
+                        window.location.href = url; // Start download
+                    }, 1000); // Delay for 1 second
                 }
             }, 500); // Update progress every 500ms
         });
     </script>
-<script>
-    document.getElementById('downloadButton').addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent the default download behavior
-        
-        const url = this.getAttribute('href'); // Get the CV URL
-        let downloadProgress = 0; // Initialize download progress
-        
-        // Simulate download progress
-        const interval = setInterval(() => {
-            if (downloadProgress < 100) {
-                downloadProgress += 10; // Increase progress by 10%
-                this.innerHTML = `<i class="fas fa-download"></i> Downloading... ${downloadProgress}%`;
-            } else {
-                clearInterval(interval);
-                this.innerHTML = `<i class="fas fa-check-circle"></i> Complete`; // Change to complete
-                setTimeout(() => {
-                    window.location.href = url; // Start download
-                }, 1000); // Delay for 1 second
-            }
-        }, 500); // Update progress every 500ms
-    });
-</script>
+     <footer style="background-color: #282c34; color: white; padding: 20px; text-align: center;">
+        <p>&copy; 2024 Baluku Jerry. All rights reserved.</p>
+        <div class="social-icons" style="display: flex; justify-content: center; margin-top: 10px;">
+         
+            <h3 style="margin-top: 20px;">Partners and Sponsors</h3>
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
+                <a href="https://www.beselfless.org" target="_blank" style="margin: 0 10px;">
+                    <img src="C:\Users\HP\Desktop\Jerry Fly Tech\Images\Be.png" alt="Beselfless" style="height: 40px  ;"/>
+                </a>
+                <a href="https://www.byui.edu" target="_blank" style="margin: 0 10px;">
+                    <img src="C:\Users\HP\Desktop\Jerry Fly Tech\Images\byu.png" alt="BYU Idaho" style="height: 40px;"/>
+                </a>
+                <a href="https://www.pathwayconnect.com" target="_blank" style="margin: 0 10px;">
+                    <img src="C:\Users\HP\Desktop\Jerry Fly Tech\Images\pathway.png" alt="Pathway Connect" style="height: 40px;"/>
+                </a>
+                <a href="https://www.elgononlinetv.com" target="_blank" style="margin: 0 10px;">
+                    <img src="C:\Users\HP\Desktop\Jerry Fly Tech\Images\elgon.png" alt="Elgon Online TV" style="height: 40px;"/>
+                </a>
+    </div>
+        </div>
+    </footer>
+    
     <script src="javascript/script.js"></script>
 </body>
 </html>
+

@@ -52,14 +52,14 @@ body {
 
 .nav-buttons a {
     text-decoration: none; /* Remove underline */
-    color: #00ff00; /* Default color */
+    color: hsl(202, 100%, 50%); /* Default color */
     padding: 10px 15px; /* Padding for buttons */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
 .nav-buttons a:hover {
-    background-color: rgba(0, 255, 0, 0.2); /* Light background on hover */
-    color: #000; /* Change text color on hover */
+    background-color: rgba(38, 16, 241, 0.87); /* Light background on hover */
+    color: hsl(0, 83%, 43%); /* Change text color on hover */
 }
 
 /* Media Queries for Responsive Design */
@@ -152,6 +152,7 @@ h1 {
 .image-container {
     flex: 0 0 auto; /* Prevent the image from stretching */
     position: relative; /* Position relative for neon effect */
+    padding-right: 50px;
 }
 
 /* Image styles */
