@@ -7,6 +7,7 @@
     <title>Baluku Jerry</title>
     <link rel="stylesheet" href="styles/styles.css">
     <style>
+        /* Add your existing styles here */
         .dark-mode {
             background-color: #121212;
             color: #ffffff;
@@ -15,7 +16,7 @@
             background: linear-gradient(135deg, #444, #666);
         }
         .neon-button {
-            background: linear-gradient(135deg, #c51c24, #b408d6); /* Gradient */
+            background: linear-gradient(135deg, #c51c24, #b408d6);
             border: none;
             color: #fff;
             padding: 10px 20px;
@@ -26,38 +27,32 @@
             transition: 0.3s;
             border-radius: 5px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 5px; /* Space between buttons */
+            margin: 5px;
         }
-
         .neon-button:hover {
             box-shadow: 0 0 5px #e75e0f, 0 0 10px #d11c1c, 0 0 15px #e015b4;
         }
-
         .button-container {
             display: flex;
             justify-content: center;
             margin-top: 20px;
         }
-
         @media (max-width: 768px) {
             .neon-button {
                 font-size: 14px;
                 padding: 8px 16px;
             }
         }
-
         .section-heading {
             text-align: center;
             margin-bottom: 20px;
         }
-
         .content-container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             text-align: center;  
         }
-
         .social-icons {
             display: flex;
             justify-content: center;
@@ -65,7 +60,6 @@
             gap: 20px;
             padding: 20px;
         }
-
         .social-icon {
             width: 40px;
             height: 40px;
@@ -77,16 +71,14 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .social-icon i {
             color: #d8d064;
             transition: color 0.3s;
         }
-
         /* Specific icon colors */
         .instagram { 
-    background: linear-gradient(135deg, #ff0000 42%, hsl(313, 98%, 55%) 74%); 
-}
+            background: linear-gradient(135deg, #ff0000 42%, hsl(313, 98%, 55%) 74%); 
+        }
         .tiktok { background: linear-gradient(135deg, hsl(323, 84%, 44%), #2156c7); }
         .whatsapp { background: linear-gradient(135deg, #b5e9c8, #128C7E); }
         .youtube { background: linear-gradient(135deg, #FF0000, #C4302B); }
@@ -94,76 +86,67 @@
         .twitter { background: linear-gradient(135deg, rgb(15, 8, 13), #63b1e6); }
         .email { background: linear-gradient(135deg, #c9d15d, hsl(0, 79%, 38%)); }
         .facebook { background: linear-gradient(135deg, #5daddb, hsl(236, 92%, 40%)); }
-
         .social-icon:hover {
             transform: scale(1.1);
             box-shadow: 0 0 20px hwb(0 0% 0%), 0 0 40px #d4139a;
         }
-
         .social-icon:hover i {
             color: #fff;
         }
-
         @media (max-width: 768px) {
             .social-icon {
                 width: 30px;
                 height: 30px;
             }
-
             .social-icon i {
                 font-size: 1.5em;
             }
         }
-
         .auto-typed-text {
-            min-width: 80px;
+            min-width: none;
             display: inline-block;
+        }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: #fff;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar" id="navbar">
-            <div class="logo" id="logo">Baluku Jerry</div>
+            <div class="logo" id="logo">Josephats</div>
             <ul class="nav-buttons" style="font-family: brush script mt, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home"><i class="fas fa-home"></i></a></li>
+                <li><a href="#about"><i class="fas fa-user"></i></a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i></a></li>
+                <li><a href="#skills"><i class="fas fa-laptop-code"></i></a></li>
+                <li><a href="#projects"><i class="fas fa-briefcase"></i></a></li>
+                <li><a href="#testimonials"><i class="fas fa-comments"></i></a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i></a></li>
             </ul>
-            <div class="language-selector">
-                <img src="Images/Licon.png" alt="Language Icon" width="16" height="16" id="languageIcon" />
-                <div class="dropdown" id="dropdown">
-                    <div><button class="dark-mode-toggle" id="darkModeToggle">🌙</button></div>
-                    <ul class="nav-buttons">
-                        <li><button data-lang="en">English</button></li>
-                        <li><button data-lang="es">Spanish</button></li>
-                        <li><button data-lang="fr">French</button></li>
-                        <li><button data-lang="zh-CN">Chinese</button></li>
-                        <li><button data-lang="ar">Arabic</button></li>
-                        <li><button data-lang="hi">Hindi</button></li>
-                        <li><button data-lang="pt">Portuguese</button></li>
-                        <li><button data-lang="ru">Russian</button></li>
-                        <li><button data-lang="ja">Japanese</button></li>
-                        <li><button data-lang="de">German</button></li>
-                    </ul>
-                </div>
-            </div>
         </nav>
     </header>
+    
     <main>
         <section id="home" class="home-section">
             <div class="content-container">
-               
                 <h1 class="section-heading">Heil Dear!</h1>
-                <p>I'm <span id="josephats" class="neon" style="font-family: 'Times New Roman', Times, serif; font-size:20px;">Josephats</span></p>
-                <p>And a <span class="auto-typed-text"style="min-width: 10px;"></span><span class="cursor"></span></p>
+                <p>I'm <span id="josephats" class="neon" style="font-family: 'Times New Roman', Times, serif; font-size:20px;">Baluku Josephats</span></p>
+                <p>And a <span class="auto-typed-text" style="min-width: 10px;"></span><span class="cursor"></span></p>
                 <p style="font-family: 'Times New Roman', Times, serif;">I am a tech enthusiast with a passion for developing cutting-edge solutions that enhance user experiences. My expertise spans software development, system architecture, and UI/UX design. I thrive on transforming complex challenges into scalable applications, leveraging the latest tech for innovation. Dedicated to continuous learning, I deliver impactful projects for today’s digital landscape.</p>
                 <p style="font-family: 'Times New Roman', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;">As a collaborative team player, I enjoy brainstorming with diverse groups to implement agile strategies for high-quality results. My goal: to impact the tech world, helping businesses harness the power of technology effectively.</p>
             </div>
             <div class="image-container">
-                <img src="Images/Jerry.png" alt="A professional portrait of Baluku Jerry" class="framed-image" />
+                <img src="Images/Jerry.jpeg" alt="A professional portrait of Baluku Jerry" class="framed-image" />
             </div>
         </section>
         
@@ -216,14 +199,67 @@
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
-                    
-                    </div>
                 </div>
             </section>
         </section>
     </main>
 
     <script>
+    const colors = [
+    '#800080',  // Purple
+    '#90EE90', // Light Green
+    '#ADD8E6', // Light Blue
+    '#FF6347', // Tomato
+    '#4682B4', // Steel Blue
+    '#FFD700', // Gold
+    '#8B0000', // Dark Red
+    '#FF4500', // Orange Red
+    '#32CD32', // Lime Green
+    '#FF1493', // Deep Pink
+    '#8A2BE2', // Blue Violet
+    '#FF8C00'  // Dark Orange
+]; // Your chosen colors
+ // Your chosen colors
+let colorIndex = 0;
+
+        function changeColor() {
+            document.getElementById('josephats').style.color = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+
+        // Change color every second (1000 milliseconds)
+        setInterval(changeColor, 1000);
+        // Typing effect for "And a [role]"
+        const roles = ['Developer', 'Designer', 'Problem Solver', 'Tech Enthusiast'];
+        let roleIndex = 0;
+        let charIndex = 0;
+        const autoTypedText = document.querySelector('.auto-typed-text');
+
+        function type() {
+            if (charIndex < roles[roleIndex].length) {
+                autoTypedText.textContent += roles[roleIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100); // Type each character every 100ms
+            } else {
+                setTimeout(deleteText, 1000); // Wait before deleting
+            }
+        }
+
+        function deleteText() {
+            if (charIndex > 0) {
+                autoTypedText.textContent = autoTypedText.textContent.slice(0, -1);
+                charIndex--;
+                setTimeout(deleteText, 50); // Delete each character every 50ms
+            } else {
+                roleIndex = (roleIndex + 1) % roles.length; // Move to the next role
+                setTimeout(type, 500); // Wait before typing the next role
+            }
+        }
+
+        // Start the typing effect
+        type();
+
+        // Download button script
         document.getElementById('downloadButton').addEventListener('click', function(e) {
             e.preventDefault(); // Prevent the default download behavior
             const url = this.getAttribute('href'); // Get the CV URL
@@ -244,14 +280,14 @@
             }, 500); // Update progress every 500ms
         });
     </script>
-     <footer style="background-color: #282c34; color: white; padding: 20px; text-align: center;">
+    
+    <footer style="background-color: #282c34; color: white; padding: 20px; text-align: center;">
         <p>&copy; 2024 Baluku Jerry. All rights reserved.</p>
         <div class="social-icons" style="display: flex; justify-content: center; margin-top: 10px;">
-         
             <h3 style="margin-top: 20px;">Partners and Sponsors</h3>
             <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
                 <a href="https://www.beselfless.org" target="_blank" style="margin: 0 10px;">
-                    <img src="C:\Users\HP\Desktop\Jerry Fly Tech\Images\Be.png" alt="Beselfless" style="height: 40px  ;"/>
+                    <img src="C:\Users\HP\Desktop\Jerry Fly Tech\Images\Be.png" alt="Beselfless" style="height: 40px;"/>
                 </a>
                 <a href="https://www.byui.edu" target="_blank" style="margin: 0 10px;">
                     <img src="C:\Users\HP\Desktop\Jerry Fly Tech\Images\byu.png" alt="BYU Idaho" style="height: 40px;"/>
@@ -262,7 +298,7 @@
                 <a href="https://www.elgononlinetv.com" target="_blank" style="margin: 0 10px;">
                     <img src="C:\Users\HP\Desktop\Jerry Fly Tech\Images\elgon.png" alt="Elgon Online TV" style="height: 40px;"/>
                 </a>
-    </div>
+            </div>
         </div>
     </footer>
     
