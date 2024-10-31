@@ -129,9 +129,10 @@ h1 {
 }
 
 .auto-typed-text {
-    display: inline;
+    display: inline-block;
     color: blue;
     font-weight: bold;
+    overflow: initial;
 }
 
 .neon {
