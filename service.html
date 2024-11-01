@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Baluku Jerry</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #1d8ecf;
+            overflow: hidden; /* Prevent scrollbars */
+            margin: 0; /* Remove default margin */
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place behind other content */
+            opacity: 0.5; /* Adjust opacity for visibility of content */
+        }
+
+        header {
+            position: relative; /* Ensure the header is above the video */
+            z-index: 1;
+            display: flex; /* Use flexbox to center the icon */
+            justify-content: center; /* Center the content */
+            padding: 20px;
+        }
+
+        .video-icon {
+            font-size: 3em; /* Adjust icon size */
+            color: #fff; /* Change icon color for visibility */
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: hsl(251, 90%, 35%); /* Change text color for better contrast */
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            position: relative; /* Ensure this is above the video */
+            z-index: 1;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.8); /* Add a white background with opacity */
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(204, 13, 172, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 2; /* Ensure card is above video */
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card i {
+            font-size: 2em;
+            color: #d8d064;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin: 15px 0;
+            color: #000; /* Change color for better contrast */
+        }
+
+        .service-card p {
+            color: #d11392;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 2; /* Above all other content */
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background: transparent;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #282c34;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <iframe class="video-background" 
+        src="https://www.youtube.com/embed/HkPykDjw_uY?autoplay=1&mute=1&loop=1&playlist=HkPykDjw_uY&controls=0&start=863" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+    </iframe>
+
+    <header>
+        <i class="fas fa-video video-icon"></i> <!-- Video icon -->
+        <nav class="navbar" id="navbar">
+            <div class="logo" id="logo">Baluku Jerry</div>
+            <ul class="nav-buttons">
+                <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i></a></li>
+                <li><a href="services.html"><i class="fas fa-cogs"></i></a></li>
+                <li><a href="C:\Users\HP\Desktop\Jerry Fly Tech\projects.html"><i class="fas fa-briefcase"></i></a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="header">
+            <h1>Our Services</h1>
+        </section>
+
+        <div class="services-container">
+            <div class="service-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>Building responsive and functional websites to enhance your online presence.</p>
+                <button class="learn-more-btn" onclick="openModal('Web Development', 'We create custom websites tailored to your needs, ensuring a seamless user experience.')">Learn More</button>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>Creating intuitive and engaging user interfaces for seamless user experiences.</p>
+                <button class="learn-more-btn" onclick="openModal('UI/UX Design', 'Our design team focuses on user-centered design principles to create visually appealing and functional interfaces.')">Learn More</button>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile App Development</h3>
+                <p>Developing cross-platform mobile applications to reach a wider audience.</p>
+                <button class="learn-more-btn" onclick="openModal('Mobile App Development', 'We develop robust mobile applications that provide a great user experience on both iOS and Android platforms.')">Learn More</button>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Technical Support</h3>
+                <p>Providing ongoing support and maintenance for your digital solutions.</p>
+                <button class="learn-more-btn" onclick="openModal('Technical Support', 'Our support team is available to assist you with any technical issues you may encounter, ensuring your systems run smoothly.')">Learn More</button>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-search"></i>
+                <h3>SEO Optimization</h3>
+                <p>Enhancing your website’s visibility and ranking on search engines.</p>
+                <button class="learn-more-btn" onclick="openModal('SEO Optimization', 'We provide comprehensive SEO strategies to improve your website’s search engine ranking and increase organic traffic.')">Learn More</button>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-comments"></i>
+                <h3>Consulting</h3>
+                <p>Offering expert advice to help you navigate the tech landscape.</p>
+                <button class="learn-more-btn" onclick="openModal('Consulting', 'Our consulting services help you develop strategies to leverage technology for your business success.')">Learn More</button>
+            </div>
+        </div>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Baluku Jerry. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(title, description) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+

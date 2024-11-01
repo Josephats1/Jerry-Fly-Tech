@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Login/Register Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General reset and background */
+        * {
+            box-sizing: border-box; /* Ensure padding and border are included in total width and height */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: 'Arial', sans-serif; /* Set a default font */
+        }
+
+        /* Body styling */
+        body {
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+            height: 100vh; /* Full viewport height */
+            background: linear-gradient(135deg, #141e30, #243b55); /* Background gradient */
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        /* Container for the form */
+        #form-container {
+            position: relative; /* Position relative for child elements */
+            width: 90%; /* Responsive width */
+            max-width: 700px; /* Max width for larger screens */
+            height: 400px; /* Fixed height */
+            background: transparent; /* Transparent background */
+            display: flex; /* Flex layout for sections */
+            overflow: hidden; /* Hide overflow */
+            perspective: 1000px; /* Perspective for 3D effect */
+        }
+
+        /* Welcome section styling */
+        .welcome-section {
+            width: 50%; /* Half width of the container */
+            background: linear-gradient(135deg, #ff416c, #ff4b2b); /* Gradient background */
+            display: flex; /* Flex layout for content */
+            flex-direction: column; /* Column layout */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            padding: 20px; /* Padding around content */
+            color: #fff; /* Text color */
+            transition: transform 0.6s ease; /* Transition for sliding effect */
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%); /* Triangular shape */
+        }
+
+        /* Heading styles */
+        .welcome-section h2 {
+            font-size: 28px; /* Font size for heading */
+            margin-bottom: 8px; /* Space below heading */
+        }
+
+        /* Paragraph styles */
+        .welcome-section p {
+            font-size: 14px; /* Font size for paragraph */
+            text-align: center; /* Center text */
+        }
+
+        /* Form section styling */
+        .form-section {
+            width: 50%; /* Half width of the container */
+            background: linear-gradient(135deg, #ff416c, #ff4b2b); /* Gradient background */
+            display: flex; /* Flex layout for content */
+            flex-direction: column; /* Column layout */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            color: #fff; /* Text color */
+            padding: 20px; /* Padding around content */
+            position: relative; /* Position relative for child elements */
+            transition: 0.6s; /* Transition for sliding effect */
+            clip-path: polygon(50% 0, 100% 100%, 0 100%); /* Triangular shape */
+        }
+
+        /* Form box styling */
+        .form-box {
+            display: none; /* Initially hidden */
+            width: 80%; /* Responsive width */
+            max-width: 300px; /* Max width */
+            text-align: center; /* Center text */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            background: transparent; /* Transparent background */
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%); /* Triangular shape */
+            position: relative; /* Position relative for child elements */
+        }
+
+        /* Active form box */
+        .form-box.active {
+            display: flex; /* Display flex when active */
+            flex-direction: column; /* Column layout */
+            align-items: center; /* Center items horizontally */
+        }
+
+        /* Form box heading styles */
+        .form-box h2 {
+            font-size: 24px; /* Font size for heading */
+            margin-bottom: 10px; /* Space below heading */
+        }
+
+        /* Input styling */
+        .input-box {
+            width: 100%; /* Full width */
+            margin: 10px 0; /* Margin around inputs */
+            padding: 10px 40px; /* Padding with extra space for icons */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners */
+            background: #444; /* Dark background */
+            color: #fff; /* Text color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            transition: border 0.3s; /* Transition for border color */
+            position: relative; /* Position for icons */
+        }
+
+        /* Focus state for inputs */
+        .input-box:focus {
+            outline: none; /* Remove default outline */
+            border: 2px solid #ff4b2b; /* Highlight border on focus */
+        }
+
+        /* Placeholder styles */
+        .input-box::placeholder {
+            color: #fff; /* Placeholder color */
+            opacity: 0.7; /* Placeholder opacity */
+        }
+
+        /* Button styling */
+        .btn {
+            width: 100%; /* Full width */
+            padding: 10px; /* Padding inside button */
+            background: linear-gradient(135deg, #ff4b2b, #ff416c); /* Gradient background */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            color: #fff; /* Text color */
+            font-size: 16px; /* Font size */
+            margin-top: 10px; /* Space above button */
+            transition: background 0.3s, box-shadow 0.3s; /* Transition for hover effects */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+        }
+
+        /* Hover state for buttons */
+        .btn:hover {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b); /* Change gradient on hover */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+        }
+
+        /* Toggle button styling */
+        .toggle-btn {
+            color: #ff4b2b; /* Color for toggle text */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-weight: bold; /* Bold text */
+            margin-top: 10px; /* Space above toggle */
+        }
+
+        /* Transform effect when switching forms */
+        #form-container.signup-active .welcome-section {
+            transform: translateX(100%); /* Slide out welcome section */
+        }
+
+        #form-container.signup-active .form-section {
+            transform: translateX(-100%); /* Slide in form section */
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            #form-container {
+                flex-direction: column; /* Stack sections on small screens */
+                height: auto; /* Adjust height */
+            }
+
+            .welcome-section, .form-section {
+                width: 100%; /* Full width for smaller screens */
+                clip-path: none; /* Remove clip-path for better visibility */
+            }
+
+            .form-box {
+                clip-path: none; /* Remove clip-path for form boxes */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h2>Welcome Back!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <!-- Login Form -->
+            <div class="form-box active" id="login-box">
+                <h2>Login</h2>
+                <input type="text" class="input-box" placeholder="Username" required>
+                <input type="password" class="input-box" placeholder="Password" required>
+                <button class="btn">Login</button>
+                <p>Don’t have an account? <span class="toggle-btn" onclick="toggleForm()">Switch to Signup</span></p>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="form-box" id="signup-box">
+                <h2>Signup</h2>
+                <input type="text" class="input-box" placeholder="Username" required>
+                <input type="email" class="input-box" placeholder="Email" required>
+                <input type="password" class="input-box" placeholder="Password" required>
+                <button class="btn">Signup</button>
+                <p>Already have an account? <span class="toggle-btn" onclick="toggleForm()">Switch to Login</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const formContainer = document.getElementById('form-container');
+            const loginBox = document.getElementById('login-box');
+            const signupBox = document.getElementById('signup-box');
+            
+            // Toggle the active class to switch between forms
+            formContainer.classList.toggle('signup-active');
+            loginBox.classList.toggle('active');
+            signupBox.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

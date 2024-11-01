@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Baluku Jerry</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.5s;
+        }
+        .header {
+            text-align: center;
+            padding: 50px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .content-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            position: relative;
+        }
+        .content-container.fold {
+            transform: translateY(-20px); /* Fold upwards slightly on hover */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 200px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .social-icon i {
+            color: #d8d064;
+            transition: color 0.3s;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .social-icon:hover i {
+            color: #fff;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .neumorphic-card {
+            background: #e0e0e0;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 
+                5px 5px 15px rgba(0, 0, 0, 0.2), 
+                -5px -5px 15px rgba(255, 255, 255, 0.9);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 150px;
+            text-align: center;
+        }
+        .neumorphic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                10px 10px 20px rgba(0, 0, 0, 0.3), 
+                -10px -10px 20px rgba(255, 255, 255, 1);
+                .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.neumorphic-card {
+    background: #e0e0e0;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 
+        5px 5px 15px rgba(0, 0, 0, 0.2), 
+        -5px -5px 15px rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 150px;
+    text-align: center;
+}
+
+.skill-icon {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    margin-bottom: 10px; /* Space between the image and text */
+}
+.neumorphic-card {
+    background: #e0e0e0; /* Base color */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 
+        5px 5px 15px rgba(0, 0, 0, 0.2), 
+        -5px -5px 15px rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 150px;
+    text-align: center;
+    position: relative; /* Position for absolute children */
+    overflow: hidden; /* To hide the background image outside the card */
+}
+
+.neumorphic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(''); /* Default empty */
+    background-size: cover; /* Cover to fill the card */
+    background-position: center; /* Center the image */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition */
+    z-index: 0; /* Behind the text */
+}
+
+.neumorphic-card:hover::before {
+    opacity: 0.5; /* Show background image on hover */
+}
+
+.neumorphic-card:hover {
+    transform: translateY(-8px); /* Optional hover effect */
+    box-shadow: 
+        10px 10px 20px rgba(0, 0, 0, 0.3), 
+        -10px -10px 20px rgba(255, 255, 255, 1);
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="logo" id="logo">Baluku Jerry</div>
+            <ul class="nav-buttons">
+                <li><a href="C:\Users\HP\Desktop\Jerry Fly Tech\index.html"><i class="fas fa-home"></i></a></li>
+                <li><a href="#about"><i class="fas fa-user"></i></a></li>
+                <li><a href="C:\Users\HP\Desktop\Jerry Fly Tech\service.html"><i class="fas fa-cogs"></i></a></li>
+               
+                <li><a href="C:\Users\HP\Desktop\Jerry Fly Tech\projects.html"><i class="fas fa-briefcase"></i></a></li>
+                
+                <li><a href="#contact"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="header">
+            <h1>About Me</h1>
+        </section>
+    
+        <div class="content-container">
+            <div class="image-container">
+                <img src="Images/Jerry.jpeg" alt="Baluku Jerry" />
+            </div>
+            <p>Hello! I’m Baluku Jerry, a passionate tech enthusiast with a knack for solving complex problems through technology. My journey began with a fascination for coding, which evolved into a career dedicated to creating meaningful digital experiences.</p>
+            <p>With expertise in various fields including software development, UI/UX design, and content creation, I thrive on the challenges presented in the fast-paced tech world. My goal is to leverage technology to simplify lives and enhance user experiences.</p>
+            <p>Outside of work, I enjoy collaborating with diverse teams, learning new technologies, and sharing knowledge with others. I believe in the power of innovation and the impact it can have on our daily lives.</p>
+            
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="neumorphic-card" data-bg="C:\Users\HP\Desktop\Jerry Fly Tech\Images\stack.png">
+                    <h3>Full-Stack Development</h3>
+                </div>
+                <div class="neumorphic-card" data-bg="path/to/uiux.png">
+                    <h3>UI/UX Design</h3>
+                </div>
+                <div class="neumorphic-card" data-bg="path/to/agile.png">
+                    <h3>Agile Methodologies</h3>
+                </div>
+                <div class="neumorphic-card" data-bg="path/to/contentstrategy.png">
+                    <h3>Content Strategy</h3>
+                </div>
+                <div class="neumorphic-card" data-bg="path/to/problem-solving.png">
+                    <h3>Creative Problem Solving</h3>
+                </div>
+            </div>
+            
+            <h2>Get in Touch</h2>
+            <p>If you’d like to collaborate or just say hello, feel free to reach out!</p>
+            <div class="social-icons">
+                <div class="social-icon facebook">
+                    <a href="https://www.facebook.com/profile.php?id=100092843282009" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+                <div class="social-icon email">
+                    <a href="mailto:bjerrykibs@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="social-icon instagram">
+                    <a href="https://www.instagram.com/baluku.jerry" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="social-icon linkedin">
+                    <a href="https://www.linkedin.com/in/baluku-josephats-440602273/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="social-icon twitter">
+                    <a href="https://x.com/bjerrykibs" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background-color: #282c34; color: white; padding: 20px; text-align: center;">
+        <p>&copy; 2024 Baluku Jerry. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function changeBackgroundColor() {
+            const colors = ['#FFDDC1', '#FFABAB', '#FFC3A0', '#FF677D', '#D4A5A5', '#392F5A'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        document.querySelector('.content-container').addEventListener('click', changeBackgroundColor);
+
+        // Scroll effect
+        window.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            const contentContainer = document.querySelector('.content-container');
+            contentContainer.style.transform = `translateY(${-Math.min(scrollY / 2, 150)}px)`; // Adjusts how much it folds
+        });
+
+        // Fold effect on hover
+        const contentContainer = document.querySelector('.content-container');
+        contentContainer.addEventListener('mouseenter', function() {
+            contentContainer.classList.add('fold');
+        });
+        contentContainer.addEventListener('mouseleave', function() {
+            contentContainer.classList.remove('fold');
+        });
+        document.querySelectorAll('.neumorphic-card').forEach(card => {
+    const bgImage = card.getAttribute('data-bg');
+    card.style.setProperty('--bg-image', `url(${bgImage})`);
+    card.style.backgroundImage = `url(${bgImage})`; // Set the background image
+});
+
+    </script>
+</body>
+</html>
